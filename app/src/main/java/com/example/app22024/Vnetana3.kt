@@ -51,22 +51,21 @@ class Vnetana3 : AppCompatActivity() {
             startActivity(regresar)
         }
     }
-
-
+//FUNCION PARA VER EL ESTADO DEL SENSOR
     private  fun findLocation(){
         val task = fusedLocationProviderClient.lastLocation
         if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION)!= PackageManager.PERMISSION_GRANTED
             && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION)!= PackageManager.PERMISSION_GRANTED){
             ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION), 101)
-
-
-
+            //ESTO ES UN EJEMPLO
             return
         }
 
         task.addOnSuccessListener {
             if (it!=null){
-                val dire=getAddress(it.latitude, it.longitude)
+                val dire=getAddress(-3.9876329, -79.1971966)
+                //val dire=getAddress(it.latitude, it.longitude)
+
                 val tv_mensaje=findViewById<TextView>(R.id.textView)
                 Toast.makeText(applicationContext, "${it.latitude} ${it.longitude}", Toast.LENGTH_SHORT).show()
                 tv_mensaje.setText("${it.latitude} ${it.longitude} - ${it.altitude} - ${it.speed} - ${dire}")
