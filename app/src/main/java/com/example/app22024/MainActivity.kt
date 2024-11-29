@@ -20,10 +20,25 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         layoutform()
         ventana4()
+        ventanaRegister()
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+        }
+    }
+    fun ventanaRegister(){
+        val btnRegister=findViewById<Button>(R.id.btnRegister)
+        val btnLogin=findViewById<Button>(R.id.btnLogin)
+
+        btnLogin.setOnClickListener(){
+            val irVentanaLogin=Intent(this, LoginActivity::class.java)
+            startActivity(irVentanaLogin)
+        }
+
+        btnRegister.setOnClickListener(){
+            val irVentanalogin=Intent(this, SignupActivity::class.java)
+            startActivity(irVentanalogin)
         }
     }
     fun ventana4(){

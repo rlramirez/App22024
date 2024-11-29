@@ -39,5 +39,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Ventana 4" />
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Registro de usuarios" />
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login de usuarios" />
 
 </LinearLayout>
